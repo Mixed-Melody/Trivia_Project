@@ -59,10 +59,10 @@ class TriviaQuestion:
 
 # Player class
 class Player:
-    def __init__(self, player_id, name,):
+    def __init__(self, player_id, name, high_score=0):
         self.player_id = player_id
         self.name = name
-        self.high_score = 0
+        self.high_score = high_score
 
 
     def __str__(self):
@@ -90,6 +90,7 @@ class QuizRound:
         self.questions = questions
         self.current_index = 0
         self.score = 0
+        self.missed_questions = []  # List to store missed questions
 
     def __str__(self):
         return (
@@ -99,32 +100,40 @@ class QuizRound:
             f"Score: {self.score}\n"
         )
 
+    def get_current_question(self):
+        return self.questions[self.current_index]
+
+    def next_question(self):
+        if self.current_index < len(self.questions):
+            self.current_index += 1
+            return True
+        else:
+            return False
+
     def show_current_question(self):
         typewriter_print(
-            f"Question 1\n"
-            f"{self.questions[self.current_index].prompt}\n"
+            f"Question {self.current_index + 1}\n"
+            f"{self.get_current_question().prompt}\n"
         )
 
     def show_choices(self):
         typewriter_print(f"Choices: ")
         c = 1
-        for each in self.questions[self.current_index].choices:
+        for each in self.get_current_question().choices:
             print(f"{c}. {each}")
             c += 1
 
     def answer_question(self, answer):
-        if self.questions[self.current_index].correct_answer == answer:
-            print("Correct!")
+        if self.get_current_question().correct_answer == answer:
+            print("Correct!\n")
+            self.score += 1
         else:
-            print("Incorrect!")
+            self.missed_questions.append(self.get_current_question())
+            print("Incorrect!\n")
 
-    def update_score(self, score):
-        print(f"update_score called with score: {score}")
-
-    def start_round(self):
-        print("start_round called")
+    def show_question(self):
         self.show_current_question()
         self.show_choices()
 
     def is_finished(self):
-        print("is_finished called") 
+        return self.current_index >= len(self.questions)

@@ -1,0 +1,24 @@
+{
+    "players": [
+        {
+            "id": "P001",
+            "name": "Rachel",
+            "high_score": 50
+        },
+        {
+            "id": "P002",
+            "name": "River",
+            "high_score": 8
+        },
+        {
+            "id": "P003",
+            "name": "Bob",
+            "high_score": 0
+        },
+        {
+            "id": "P004",
+            "name": "Angel",
+            "high_score": 0
+        }
+    ]
+}

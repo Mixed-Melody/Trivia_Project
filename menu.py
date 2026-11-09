@@ -1,6 +1,9 @@
 # menu loop and game flow
 from global_functions import typewriter_print
 from main import start_quiz
+from storage import load_questions
+from quiz import filter_questions, select_random_questions, get_categories, get_difficulties
+
 
 
 def show_menu():
@@ -17,7 +20,6 @@ def show_menu():
 
 
 def start_game():
-    print("start_game")
     start_quiz()
 
 
@@ -52,7 +54,6 @@ def exit_game():
 
 typewriter_print("=== Welcome to Dani's Trivia Game!!! ===")
 show_menu()
-
 while True:    
 
     choice = input("Enter your choice (1-7): ")

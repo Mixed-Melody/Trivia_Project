@@ -1,0 +1,815 @@
+{
+    "version": 1,
+    "questions": [
+        {
+            "id": "Q001",
+            "prompt": "What is the name of Han Solo’s ship?",
+            "choices": [
+                "Millennium Falcon",
+                "Ghost",
+                "Razor Crest",
+                "Tantive IV"
+            ],
+            "correct_index": 0,
+            "category": "Star Wars",
+            "difficulty": "Easy",
+            "explanation": "Han Solo pilots the Millennium Falcon with Chewbacca.",
+            "active": true
+        },
+        {
+            "id": "Q002",
+            "prompt": "What color is the blade of Luke Skywalker’s first lightsaber?",
+            "choices": [
+                "Blue",
+                "Green",
+                "Red",
+                "Purple"
+            ],
+            "correct_index": 0,
+            "category": "Star Wars",
+            "difficulty": "Easy",
+            "explanation": "Luke initially uses the blue-bladed lightsaber that belonged to Anakin Skywalker.",
+            "active": true
+        },
+        {
+            "id": "Q003",
+            "prompt": "Who is Luke Skywalker’s twin sister?",
+            "choices": [
+                "Leia Organa",
+                "Padmé Amidala",
+                "Rey",
+                "Ahsoka Tano"
+            ],
+            "correct_index": 0,
+            "category": "Star Wars",
+            "difficulty": "Easy",
+            "explanation": "Luke and Leia are the twin children of Anakin Skywalker and Padmé Amidala.",
+            "active": true
+        },
+        {
+            "id": "Q004",
+            "prompt": "Which droid is known for speaking in beeps and whistles?",
+            "choices": [
+                "R2-D2",
+                "C-3PO",
+                "K-2SO",
+                "IG-11"
+            ],
+            "correct_index": 0,
+            "category": "Star Wars",
+            "difficulty": "Easy",
+            "explanation": "R2-D2 is an astromech droid that communicates through electronic sounds.",
+            "active": true
+        },
+        {
+            "id": "Q005",
+            "prompt": "On which desert planet does Luke Skywalker grow up?",
+            "choices": [
+                "Tatooine",
+                "Jakku",
+                "Geonosis",
+                "Jedha"
+            ],
+            "correct_index": 0,
+            "category": "Star Wars",
+            "difficulty": "Easy",
+            "explanation": "Luke is raised by Owen and Beru Lars on Tatooine.",
+            "active": true
+        },
+        {
+            "id": "Q006",
+            "prompt": "What is the name of the Wookiee who co-pilots with Han Solo?",
+            "choices": [
+                "Chewbacca",
+                "Tarfful",
+                "Krrsantan",
+                "Zaalbar"
+            ],
+            "correct_index": 0,
+            "category": "Star Wars",
+            "difficulty": "Easy",
+            "explanation": "Chewbacca is Han Solo’s Wookiee friend and co-pilot.",
+            "active": true
+        },
+        {
+            "id": "Q007",
+            "prompt": "What is the name of the planet destroyed by the first Death Star?",
+            "choices": [
+                "Alderaan",
+                "Naboo",
+                "Corellia",
+                "Coruscant"
+            ],
+            "correct_index": 0,
+            "category": "Star Wars",
+            "difficulty": "Medium",
+            "explanation": "The Death Star destroys Alderaan in A New Hope.",
+            "active": true
+        },
+        {
+            "id": "Q008",
+            "prompt": "Who trained Obi-Wan Kenobi as a Padawan?",
+            "choices": [
+                "Qui-Gon Jinn",
+                "Yoda",
+                "Mace Windu",
+                "Count Dooku"
+            ],
+            "correct_index": 0,
+            "category": "Star Wars",
+            "difficulty": "Medium",
+            "explanation": "Qui-Gon Jinn was Obi-Wan Kenobi’s Jedi Master.",
+            "active": true
+        },
+        {
+            "id": "Q009",
+            "prompt": "What species is Admiral Ackbar?",
+            "choices": [
+                "Mon Calamari",
+                "Twi’lek",
+                "Rodian",
+                "Duros"
+            ],
+            "correct_index": 0,
+            "category": "Star Wars",
+            "difficulty": "Medium",
+            "explanation": "Admiral Ackbar is a Mon Calamari from the planet Mon Cala.",
+            "active": true
+        },
+        {
+            "id": "Q010",
+            "prompt": "Which planet is home to the cloning facilities used to create the Republic’s clone army?",
+            "choices": [
+                "Kamino",
+                "Mustafar",
+                "Bespin",
+                "Lothal"
+            ],
+            "correct_index": 0,
+            "category": "Star Wars",
+            "difficulty": "Medium",
+            "explanation": "The clone army is produced at facilities on Kamino.",
+            "active": true
+        },
+        {
+            "id": "Q011",
+            "prompt": "What is the name of the Mandalorian bounty hunter who is the genetic template for the Republic clone army?",
+            "choices": [
+                "Jango Fett",
+                "Boba Fett",
+                "Din Djarin",
+                "Cad Bane"
+            ],
+            "correct_index": 0,
+            "category": "Star Wars",
+            "difficulty": "Medium",
+            "explanation": "Kaminoan cloners use Jango Fett as the clone army’s genetic template.",
+            "active": true
+        },
+        {
+            "id": "Q012",
+            "prompt": "What is the name of the ancient Jedi texts’ island planet visited by Rey?",
+            "choices": [
+                "Ahch-To",
+                "Dagobah",
+                "Dathomir",
+                "Ilum"
+            ],
+            "correct_index": 0,
+            "category": "Star Wars",
+            "difficulty": "Medium",
+            "explanation": "Rey finds Luke Skywalker on Ahch-To, where the first Jedi Temple stands.",
+            "active": true
+        },
+        {
+            "id": "Q013",
+            "prompt": "What is the designation of the clone trooper nicknamed Fives?",
+            "choices": [
+                "CT-5555",
+                "CT-7567",
+                "CC-2224",
+                "CC-3636"
+            ],
+            "correct_index": 0,
+            "category": "Star Wars",
+            "difficulty": "Hard",
+            "explanation": "Fives is CT-5555 of the 501st Legion.",
+            "active": true
+        },
+        {
+            "id": "Q014",
+            "prompt": "Which Jedi Master was killed by Darth Sidious during the attempt to arrest him in his office, after surviving the initial attack?",
+            "choices": [
+                "Agen Kolar",
+                "Kit Fisto",
+                "Saesee Tiin",
+                "Mace Windu"
+            ],
+            "correct_index": 1,
+            "category": "Star Wars",
+            "difficulty": "Hard",
+            "explanation": "Kit Fisto lasts longer than Agen Kolar and Saesee Tiin but is killed before Mace Windu is defeated.",
+            "active": true
+        },
+        {
+            "id": "Q015",
+            "prompt": "What is the name of the capital city of Naboo?",
+            "choices": [
+                "Theed",
+                "Otoh Gunga",
+                "Sundari",
+                "Keren"
+            ],
+            "correct_index": 0,
+            "category": "Star Wars",
+            "difficulty": "Hard",
+            "explanation": "Theed is Naboo’s capital city and the location of its royal palace.",
+            "active": true
+        },
+        {
+            "id": "Q016",
+            "prompt": "Who is the Grand Admiral known for studying an enemy’s art to understand their strategy?",
+            "choices": [
+                "Thrawn",
+                "Piett",
+                "Ozzel",
+                "Rae Sloane"
+            ],
+            "correct_index": 0,
+            "category": "Star Wars",
+            "difficulty": "Hard",
+            "explanation": "Grand Admiral Thrawn uses a culture’s artwork to infer its tactics and psychology.",
+            "active": true
+        },
+        {
+            "id": "Q017",
+            "prompt": "What is the name of the Jedi archive librarian in Attack of the Clones?",
+            "choices": [
+                "Jocasta Nu",
+                "Depa Billaba",
+                "Shaak Ti",
+                "Luminara Unduli"
+            ],
+            "correct_index": 0,
+            "category": "Star Wars",
+            "difficulty": "Hard",
+            "explanation": "Jocasta Nu is the chief librarian of the Jedi Archives.",
+            "active": true
+        },
+        {
+            "id": "Q018",
+            "prompt": "Which rebel callsign does Luke Skywalker use in the Battle of Yavin?",
+            "choices": [
+                "Red Five",
+                "Red Leader",
+                "Gold Five",
+                "Blue Two"
+            ],
+            "correct_index": 0,
+            "category": "Star Wars",
+            "difficulty": "Hard",
+            "explanation": "Luke flies as Red Five during the attack on the first Death Star.",
+            "active": true
+        },
+        {
+            "id": "Q019",
+            "prompt": "Which symbol begins a single-line comment in Python?",
+            "choices": [
+                "#",
+                "//",
+                "--",
+                "/*"
+            ],
+            "correct_index": 0,
+            "category": "Python",
+            "difficulty": "Easy",
+            "explanation": "Python uses # to begin a single-line comment.",
+            "active": true
+        },
+        {
+            "id": "Q020",
+            "prompt": "Which built-in function displays text in the terminal?",
+            "choices": [
+                "print()",
+                "input()",
+                "len()",
+                "type()"
+            ],
+            "correct_index": 0,
+            "category": "Python",
+            "difficulty": "Easy",
+            "explanation": "print() writes values to standard output.",
+            "active": true
+        },
+        {
+            "id": "Q021",
+            "prompt": "Which data type stores an ordered, mutable collection?",
+            "choices": [
+                "list",
+                "tuple",
+                "set",
+                "str"
+            ],
+            "correct_index": 0,
+            "category": "Python",
+            "difficulty": "Easy",
+            "explanation": "Python lists maintain order and can be modified.",
+            "active": true
+        },
+        {
+            "id": "Q022",
+            "prompt": "What is the result of 7 // 2 in Python?",
+            "choices": [
+                "3",
+                "3.5",
+                "4",
+                "1"
+            ],
+            "correct_index": 0,
+            "category": "Python",
+            "difficulty": "Easy",
+            "explanation": "The // operator performs floor division; 7 // 2 evaluates to 3.",
+            "active": true
+        },
+        {
+            "id": "Q023",
+            "prompt": "Which keyword begins a function definition?",
+            "choices": [
+                "def",
+                "func",
+                "function",
+                "define"
+            ],
+            "correct_index": 0,
+            "category": "Python",
+            "difficulty": "Easy",
+            "explanation": "A function definition begins with the def keyword.",
+            "active": true
+        },
+        {
+            "id": "Q024",
+            "prompt": "What does len([10, 20, 30]) return?",
+            "choices": [
+                "3",
+                "2",
+                "30",
+                "60"
+            ],
+            "correct_index": 0,
+            "category": "Python",
+            "difficulty": "Easy",
+            "explanation": "The list contains three elements, so len() returns 3.",
+            "active": true
+        },
+        {
+            "id": "Q025",
+            "prompt": "What is the output of print(\"python\".upper())?",
+            "choices": [
+                "PYTHON",
+                "Python",
+                "python",
+                "pYTHON"
+            ],
+            "correct_index": 0,
+            "category": "Python",
+            "difficulty": "Medium",
+            "explanation": "The upper() string method returns an uppercase copy.",
+            "active": true
+        },
+        {
+            "id": "Q026",
+            "prompt": "Which exception is raised by int(\"hello\")?",
+            "choices": [
+                "ValueError",
+                "TypeError",
+                "KeyError",
+                "IndexError"
+            ],
+            "correct_index": 0,
+            "category": "Python",
+            "difficulty": "Medium",
+            "explanation": "The string does not represent an integer, so int() raises ValueError.",
+            "active": true
+        },
+        {
+            "id": "Q027",
+            "prompt": "What does the expression [1, 2, 3][-1] evaluate to?",
+            "choices": [
+                "3",
+                "1",
+                "-1",
+                "2"
+            ],
+            "correct_index": 0,
+            "category": "Python",
+            "difficulty": "Medium",
+            "explanation": "A negative index of -1 accesses the final element in a sequence.",
+            "active": true
+        },
+        {
+            "id": "Q028",
+            "prompt": "What does the dictionary method get(\"x\", 0) return when key \"x\" is missing?",
+            "choices": [
+                "0",
+                "None",
+                "KeyError",
+                "\"x\""
+            ],
+            "correct_index": 0,
+            "category": "Python",
+            "difficulty": "Medium",
+            "explanation": "The second argument to dict.get() supplies the fallback value.",
+            "active": true
+        },
+        {
+            "id": "Q029",
+            "prompt": "What is the result of list(range(2, 7, 2))?",
+            "choices": [
+                "[2, 4, 6]",
+                "[2, 4, 6, 8]",
+                "[2, 3, 4, 5, 6]",
+                "[4, 6]"
+            ],
+            "correct_index": 0,
+            "category": "Python",
+            "difficulty": "Medium",
+            "explanation": "range(start, stop, step) includes the start but excludes the stop.",
+            "active": true
+        },
+        {
+            "id": "Q030",
+            "prompt": "Which statement exits the nearest enclosing loop immediately?",
+            "choices": [
+                "break",
+                "continue",
+                "pass",
+                "return True"
+            ],
+            "correct_index": 0,
+            "category": "Python",
+            "difficulty": "Medium",
+            "explanation": "break terminates the closest enclosing for or while loop.",
+            "active": true
+        },
+        {
+            "id": "Q031",
+            "prompt": "What does this code print? a = [[0], [1]]; b = a[:]; b[0].append(2); print(a)",
+            "choices": [
+                "[[0, 2], [1]]",
+                "[[0], [1]]",
+                "[[0], [1], [2]]",
+                "[[0, 2], [1, 2]]"
+            ],
+            "correct_index": 0,
+            "category": "Python",
+            "difficulty": "Hard",
+            "explanation": "A slice makes a shallow copy of the outer list; the nested lists remain shared.",
+            "active": true
+        },
+        {
+            "id": "Q032",
+            "prompt": "What does this code print? x = [1, 2]; y = x; x += [3]; print(y)",
+            "choices": [
+                "[1, 2, 3]",
+                "[1, 2]",
+                "[3]",
+                "[[1, 2], 3]"
+            ],
+            "correct_index": 0,
+            "category": "Python",
+            "difficulty": "Hard",
+            "explanation": "For a list, += mutates the existing list, and y refers to that same object.",
+            "active": true
+        },
+        {
+            "id": "Q033",
+            "prompt": "What is the result of bool([]) or bool([0])?",
+            "choices": [
+                "True",
+                "False",
+                "None",
+                "0"
+            ],
+            "correct_index": 0,
+            "category": "Python",
+            "difficulty": "Hard",
+            "explanation": "An empty list is falsey; a nonempty list is truthy even if it contains zero.",
+            "active": true
+        },
+        {
+            "id": "Q034",
+            "prompt": "What does this code print? def f(x=[]): x.append(1); return len(x)\nprint(f(), f())",
+            "choices": [
+                "1 2",
+                "1 1",
+                "2 2",
+                "0 1"
+            ],
+            "correct_index": 0,
+            "category": "Python",
+            "difficulty": "Hard",
+            "explanation": "A mutable default argument is created once and reused across calls.",
+            "active": true
+        },
+        {
+            "id": "Q035",
+            "prompt": "What does this code print? a = {1, 2, 2, 3}; print(len(a))",
+            "choices": [
+                "3",
+                "4",
+                "2",
+                "1"
+            ],
+            "correct_index": 0,
+            "category": "Python",
+            "difficulty": "Hard",
+            "explanation": "A set stores unique values, so the duplicate 2 is discarded.",
+            "active": true
+        },
+        {
+            "id": "Q036",
+            "prompt": "What is the output of print([x*x for x in range(5) if x % 2 == 0])?",
+            "choices": [
+                "[0, 4, 16]",
+                "[0, 1, 4, 9, 16]",
+                "[2, 4]",
+                "[0, 2, 4]"
+            ],
+            "correct_index": 0,
+            "category": "Python",
+            "difficulty": "Hard",
+            "explanation": "The comprehension squares only even values from 0 through 4.",
+            "active": true
+        },
+        {
+            "id": "Q037",
+            "prompt": "Which planet is closest to the Sun?",
+            "choices": [
+                "Mercury",
+                "Venus",
+                "Earth",
+                "Mars"
+            ],
+            "correct_index": 0,
+            "category": "Science",
+            "difficulty": "Easy",
+            "explanation": "Mercury is the innermost planet in our solar system.",
+            "active": true
+        },
+        {
+            "id": "Q038",
+            "prompt": "What gas do plants take in during photosynthesis?",
+            "choices": [
+                "Carbon dioxide",
+                "Oxygen",
+                "Nitrogen",
+                "Helium"
+            ],
+            "correct_index": 0,
+            "category": "Science",
+            "difficulty": "Easy",
+            "explanation": "Plants use carbon dioxide and water to make sugars during photosynthesis.",
+            "active": true
+        },
+        {
+            "id": "Q039",
+            "prompt": "What is the chemical symbol for water?",
+            "choices": [
+                "H2O",
+                "CO2",
+                "O2",
+                "NaCl"
+            ],
+            "correct_index": 0,
+            "category": "Science",
+            "difficulty": "Easy",
+            "explanation": "A water molecule contains two hydrogen atoms and one oxygen atom.",
+            "active": true
+        },
+        {
+            "id": "Q040",
+            "prompt": "Which organ pumps blood through the human body?",
+            "choices": [
+                "Heart",
+                "Liver",
+                "Kidney",
+                "Lung"
+            ],
+            "correct_index": 0,
+            "category": "Science",
+            "difficulty": "Easy",
+            "explanation": "The heart pumps blood throughout the circulatory system.",
+            "active": true
+        },
+        {
+            "id": "Q041",
+            "prompt": "Which force pulls objects toward Earth?",
+            "choices": [
+                "Gravity",
+                "Magnetism",
+                "Friction",
+                "Buoyancy"
+            ],
+            "correct_index": 0,
+            "category": "Science",
+            "difficulty": "Easy",
+            "explanation": "Gravity attracts objects with mass toward Earth.",
+            "active": true
+        },
+        {
+            "id": "Q042",
+            "prompt": "At standard atmospheric pressure, at what temperature does pure water freeze?",
+            "choices": [
+                "0°C",
+                "10°C",
+                "32°C",
+                "100°C"
+            ],
+            "correct_index": 0,
+            "category": "Science",
+            "difficulty": "Easy",
+            "explanation": "Pure water freezes at approximately 0 degrees Celsius at standard pressure.",
+            "active": true
+        },
+        {
+            "id": "Q043",
+            "prompt": "What is the atomic number of carbon?",
+            "choices": [
+                "6",
+                "8",
+                "12",
+                "14"
+            ],
+            "correct_index": 0,
+            "category": "Science",
+            "difficulty": "Medium",
+            "explanation": "Carbon has six protons in its nucleus.",
+            "active": true
+        },
+        {
+            "id": "Q044",
+            "prompt": "Which cell organelle is primarily responsible for producing ATP through aerobic respiration?",
+            "choices": [
+                "Mitochondrion",
+                "Nucleus",
+                "Ribosome",
+                "Golgi apparatus"
+            ],
+            "correct_index": 0,
+            "category": "Science",
+            "difficulty": "Medium",
+            "explanation": "Mitochondria produce most of the ATP in many eukaryotic cells during aerobic respiration.",
+            "active": true
+        },
+        {
+            "id": "Q045",
+            "prompt": "Which type of electromagnetic radiation has a shorter wavelength than visible violet light?",
+            "choices": [
+                "Ultraviolet",
+                "Infrared",
+                "Microwave",
+                "Radio wave"
+            ],
+            "correct_index": 0,
+            "category": "Science",
+            "difficulty": "Medium",
+            "explanation": "Ultraviolet light has wavelengths shorter than visible violet light.",
+            "active": true
+        },
+        {
+            "id": "Q046",
+            "prompt": "Which blood component primarily transports oxygen?",
+            "choices": [
+                "Red blood cells",
+                "Platelets",
+                "White blood cells",
+                "Plasma proteins"
+            ],
+            "correct_index": 0,
+            "category": "Science",
+            "difficulty": "Medium",
+            "explanation": "Hemoglobin in red blood cells carries oxygen.",
+            "active": true
+        },
+        {
+            "id": "Q047",
+            "prompt": "Which process changes a liquid into a gas at its surface below its boiling point?",
+            "choices": [
+                "Evaporation",
+                "Condensation",
+                "Deposition",
+                "Freezing"
+            ],
+            "correct_index": 0,
+            "category": "Science",
+            "difficulty": "Medium",
+            "explanation": "Evaporation occurs when particles escape from the surface of a liquid.",
+            "active": true
+        },
+        {
+            "id": "Q048",
+            "prompt": "What is the approximate speed of light in a vacuum?",
+            "choices": [
+                "300,000 km/s",
+                "30,000 km/s",
+                "3,000 km/s",
+                "3,000,000 km/s"
+            ],
+            "correct_index": 0,
+            "category": "Science",
+            "difficulty": "Medium",
+            "explanation": "Light travels at about 299,792 kilometers per second in a vacuum.",
+            "active": true
+        },
+        {
+            "id": "Q049",
+            "prompt": "Which law states that the pressure of a fixed amount of ideal gas is inversely proportional to its volume at constant temperature?",
+            "choices": [
+                "Boyle’s law",
+                "Charles’s law",
+                "Ohm’s law",
+                "Hooke’s law"
+            ],
+            "correct_index": 0,
+            "category": "Science",
+            "difficulty": "Hard",
+            "explanation": "Boyle’s law states that pressure times volume remains constant for a fixed amount of ideal gas at constant temperature.",
+            "active": true
+        },
+        {
+            "id": "Q050",
+            "prompt": "What is the oxidation state of sulfur in sulfate, SO4²⁻?",
+            "choices": [
+                "+6",
+                "+4",
+                "-2",
+                "0"
+            ],
+            "correct_index": 0,
+            "category": "Science",
+            "difficulty": "Hard",
+            "explanation": "Four oxygens contribute -8 total; sulfur must be +6 for the ion to have charge -2.",
+            "active": true
+        },
+        {
+            "id": "Q051",
+            "prompt": "Which enzyme synthesizes a new DNA strand during DNA replication?",
+            "choices": [
+                "DNA polymerase",
+                "RNA polymerase",
+                "DNA ligase",
+                "Helicase"
+            ],
+            "correct_index": 0,
+            "category": "Science",
+            "difficulty": "Hard",
+            "explanation": "DNA polymerase adds nucleotides to a growing DNA strand.",
+            "active": true
+        },
+        {
+            "id": "Q052",
+            "prompt": "What does the event horizon of a black hole mark?",
+            "choices": [
+                "Boundary beyond which light cannot escape to distant observers",
+                "Radius where gravity becomes zero",
+                "Surface where nuclear fusion begins",
+                "Boundary of the surrounding accretion disk"
+            ],
+            "correct_index": 0,
+            "category": "Science",
+            "difficulty": "Hard",
+            "explanation": "The event horizon is a causal boundary; future-directed light signals inside it cannot reach faraway observers.",
+            "active": true
+        },
+        {
+            "id": "Q053",
+            "prompt": "For a simple recessive trait, what fraction of offspring from two heterozygous parents (Aa × Aa) is expected to be homozygous recessive (aa)?",
+            "choices": [
+                "1/4",
+                "1/2",
+                "3/4",
+                "1/8"
+            ],
+            "correct_index": 0,
+            "category": "Science",
+            "difficulty": "Hard",
+            "explanation": "The Punnett square gives AA, Aa, Aa, and aa, so one of four is aa.",
+            "active": true
+        },
+        {
+            "id": "Q054",
+            "prompt": "Which SI base unit measures electric current?",
+            "choices": [
+                "Ampere",
+                "Volt",
+                "Ohm",
+                "Coulomb"
+            ],
+            "correct_index": 0,
+            "category": "Science",
+            "difficulty": "Hard",
+            "explanation": "The ampere is the SI base unit of electric current; volts, ohms, and coulombs measure other electrical quantities.",
+            "active": true
+        }
+    ]
+}

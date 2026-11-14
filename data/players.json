@@ -19,6 +19,11 @@
             "id": "P004",
             "name": "Angel",
             "high_score": 0
+        },
+        {
+            "id": "P005",
+            "name": "Dani",
+            "high_score": 2
         }
     ]
 }

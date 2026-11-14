@@ -1,78 +1,60 @@
 # menu loop and game flow
-from global_functions import typewriter_print
-from main import start_quiz
-from storage import load_questions
-from quiz import filter_questions, select_random_questions, get_categories, get_difficulties
+import global_functions as gf
+import pages
+import game_logic as gl
 
-
+first_load = True  # Flag to indicate if it's the first time loading the menu
 
 def show_menu():
-    print()
-    typewriter_print("=== Main Menu ===")
-    print("1. Start Game")
-    print("2. View High Scores")
-    print("3. Manage Questions")
-    print("4. Quiz History")
-    print("5. Settings")
-    print("6. About")
-    print("7. Exit")
-    print()
-
+    gf.typewriter_print("\n=== Main Menu ===")
+    print("""
+    1. Start Game
+    2. View High Scores
+    3. Manage Questions
+    4. Quiz History
+    5. Settings
+    6. About
+    7. Exit
+    """)
 
 def start_game():
-    start_quiz()
-
-
-def show_high_scores():
-    print("show_high_scores")
-    show_menu()
-
-
-def show_manage_questions():
-    print("show_manage_questions")
-    show_menu()
-    
-
-def show_quiz_history():
-    print("show_quiz_history")
-    show_menu()
-    
-
-def show_about():
-    print("show_about")
-    show_menu()
-    
-
-def show_settings():
-    print("show_settings")
-    show_menu()
-    
+    print("Starting game...")
+    print() # Space for better readability
+    gl.start_quiz() # Call the function to start the quiz
 
 def exit_game():
-    typewriter_print("Thank you for playing! Goodbye!", 0.05, 0.1)
+    gf.typewriter_print("Thank you for playing! Goodbye!")
+
+if first_load: # print a message the first time the menu is loaded
+    gf.typewriter_print("=== Welcome to Dani's Trivia Game!!! ===")
+    first_load = False  # Set the flag to False after the first load
 
 
-typewriter_print("=== Welcome to Dani's Trivia Game!!! ===")
 show_menu()
+
 while True:    
+    try:
+        choice = gf.get_valid_int("Enter your choice (1-7): ".strip(), 1, 7) # Prompt the user for their menu choice and validate the input
+        print()# Space for better readability
 
-    choice = input("Enter your choice (1-7): ")
+    except ValueError:
+        print("Invalid input. Please enter integer between 1 and 7.") # Print an error message for non-integer input
+        continue
 
-    if choice == "1":
-        start_game()
-        break
-    elif choice == "2":
-        show_high_scores()
-    elif choice == "3":
-        show_manage_questions()
-    elif choice == "4":
-        show_quiz_history()
-    elif choice == "5":
-        show_settings()
-    elif choice == "6":
-        show_about()
-    elif choice == "7":
+    if choice == 1:
+        start_game() # Call the function to start the quiz
+    elif choice == 2:
+        pages.display_high_scores()
+    elif choice == 3:
+        pages.display_manage_questions()
+    elif choice == 4:
+        pages.display_quiz_history()
+    elif choice == 5:
+        pages.display_settings()
+    elif choice == 6:
+        pages.display_about()
+    elif choice == 7:
         exit_game()
         break
-    else:
-        print("Invalid selection. Please choose 1-7.")
+
+    show_menu() # Show the menu again after handling the user's choice

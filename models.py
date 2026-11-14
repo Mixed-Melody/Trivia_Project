@@ -1,5 +1,6 @@
 # Trivia Question, Player and Quiz round
-from global_functions import typewriter_print
+import global_functions as gf
+import quiz
 
 # Trivia question class
 class TriviaQuestion:
@@ -27,31 +28,34 @@ class TriviaQuestion:
     
     def is_valid(self):
 
-        if not self.question_id or self.question_id.strip() == "":
+        if not self.question_id or self.question_id.strip() == "": # Check if the question ID is empty or contains only whitespace
             return False, "Question ID cannot be empty."
 
-        if not self.prompt or self.prompt.strip() == "":
+        if not self.prompt or self.prompt.strip() == "": # Check if the prompt is empty or contains only whitespace
             return False, "Prompt cannot be empty."
 
-        if not self.choices or len(self.choices) < 2:
+        if not self.choices or len(self.choices) < 2: # Check if the choices list is empty or has less than 2 choices
             return False, "At least two choices are required."
 
-        if self.correct_answer is None:
+        if self.correct_answer is None: # Check if the correct answer index is None
             return False, "Correct answer cannot be None."
 
-        if self.correct_answer < 1:
-            return False, "Correct answer cannot be less than 1."
+        if self.correct_answer < 0: # Check if the correct answer index is less than 0
+            return False, "Correct answer cannot be less than 0."
 
-        if self.correct_answer > len(self.choices):
+        if self.correct_answer > len(self.choices) - 1: # Check if the correct answer index is greater than the number of choices
             return False, "Correct answer is more than the number of choices."
 
-        if not self.category or self.category.strip() == "":
+        if len(set(self.choices)) != len(self.choices): # Check if the choices list contains duplicate values
+            return False, "Answer choices must be unique."
+
+        if not self.category or self.category.strip() == "": # Check if the category is empty or contains only whitespace
             return False, "Category cannot be empty."
         
-        if not self.difficulty or self.difficulty.strip() == "":
+        if not self.difficulty or self.difficulty.strip() == "": # Check if the difficulty is empty or contains only whitespace
             return False, "Difficulty cannot be empty."
         
-        if self.difficulty.strip().lower() not in ["easy", "medium", "hard"]:
+        if self.difficulty.strip().lower() not in ["easy", "medium", "hard"]: # Check if the difficulty is not one of the allowed values (case-insensitive)
             return False, "Difficulty must be 'Easy', 'Medium', or 'Hard'."
 
         return True, None
@@ -103,21 +107,14 @@ class QuizRound:
     def get_current_question(self):
         return self.questions[self.current_index]
 
-    def next_question(self):
-        if self.current_index < len(self.questions):
-            self.current_index += 1
-            return True
-        else:
-            return False
-
     def show_current_question(self):
-        typewriter_print(
+        gf.typewriter_print(
             f"Question {self.current_index + 1}\n"
             f"{self.get_current_question().prompt}\n"
         )
 
     def show_choices(self):
-        typewriter_print(f"Choices: ")
+        gf.typewriter_print(f"Choices: ")
         c = 1
         for each in self.get_current_question().choices:
             print(f"{c}. {each}")
@@ -125,15 +122,59 @@ class QuizRound:
 
     def answer_question(self, answer):
         if self.get_current_question().correct_answer == answer:
-            print("Correct!\n")
+            print("\nCorrect!\n")
             self.score += 1
         else:
             self.missed_questions.append(self.get_current_question())
-            print("Incorrect!\n")
+            print("\nIncorrect!\n")
 
     def show_question(self):
         self.show_current_question()
         self.show_choices()
 
+    def show_summary(self):
+        gf.typewriter_print("=== Quiz Summary ===")
+        gf.typewriter_print(f"Player: {self.player.name}")
+        gf.typewriter_print(f"Score: {self.score}/{len(self.questions)}")
+        gf.typewriter_print(f"Percentage: {self.score / len(self.questions) * 100:.2f}%")
+        # show breakdown of all missed questions with their correct answers and the player's answer
+        if self.missed_questions:
+            gf.typewriter_print("=== Missed Questions ===")
+            for q in self.missed_questions:
+                gf.typewriter_print(f"Category: {q.category:<10} | Difficulty: {q.difficulty:<6} | Correct Answer: {q.choices[q.correct_answer]:<15}")
+        else:
+            gf.typewriter_print("No missed questions. Great job!")
+
+        # show breakdown of score by category
+        gf.typewriter_print("=== Category Breakdown ===")
+        for category in set(q.category for q in self.questions):
+            category_questions = [
+                q for q in self.questions
+                if q.category == category
+            ]
+
+            category_score = sum(
+                1 for q in category_questions
+                if q not in self.missed_questions
+            )
+            gf.typewriter_print(
+                f"Category: {category:<15} | "
+                f"Score: {category_score}/{len(category_questions)} | "
+                f"Percentage: {category_score / len(category_questions) * 100:.2f}%"
+                )
+        
+
+    def next_question(self):
+        if self.current_index < len(self.questions):
+            self.current_index += 1
+            return True
+        else:
+            self.show_summary()
+            return False
+
     def is_finished(self):
-        return self.current_index >= len(self.questions)
+        if self.current_index >= len(self.questions): # shows the summary before returning true or false
+            self.show_summary()
+        return self.current_index >= len(self.questions) # returns true if the current index is greater than or equal to the number of questions, indicating that the quiz round is finished
+
+ 

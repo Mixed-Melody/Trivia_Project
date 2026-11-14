@@ -1,4 +1,4 @@
-from storage import load_players, load_quiz_history, save_players
+from storage import load_players, load_quiz_history, reset_high_scores
 import global_functions as gf
 
 def display_quiz_history():
@@ -31,14 +31,13 @@ def display_high_scores():
     if choice == 1:
         return  # Return to the main menu
     elif choice == 2:
-        reset_choice = gf.get_valid_int(
-        "\nAre you sure you want to reset all high scores? (1. Yes, 2. No): ".strip(), 1, 2
+        print() # Space for better readability
+        reset_choice = gf.get_valid_int("Are you sure you want to reset all high scores? (1. Yes, 2. No): ".strip(), 1, 2
         ) # Prompt the user for confirmation to reset high scores
         if reset_choice == 1:
-            from storage import reset_high_scores
-            reset_high_scores(players) # Call the function to reset all players' high scores
-            print("\nAll high scores have been reset.")
-        else:
+            if reset_high_scores(players): # Call the function to reset high scores and check if it was successful
+                print("\nFile Saved: All high scores have been reset.")
+        elif reset_choice == 2:
             print("\nHigh scores were not reset.")
         return  # Return to the main menu
 

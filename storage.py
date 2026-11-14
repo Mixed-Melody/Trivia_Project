@@ -28,7 +28,7 @@ def load_questions():
         return questions # Return the list of TriviaQuestion objects
 
     except (OSError, json.JSONDecodeError) as error: # catch FileNotFoundError and JSONDecodeError to handle file reading issues
-        print(f"Error reading trivia file: {error}") # Print an error message
+        print(f"\nError reading trivia file: {error}") # Print an error message
         return [] # Return an empty list if the JSON file is not found
     
 def save_questions(questions):
@@ -50,7 +50,7 @@ def save_questions(questions):
             json.dump(data, file, indent=4) # Write the updated trivia questions to the JSON file with indentation for readability
             return True # Return True to indicate that saving the trivia questions was successful
     except (OSError, TypeError) as error: # Catching OSError and TypeError to handle file writing issues
-        print(f"Error saving trivia data: {error}") # Print an error message if there is an issue writing to the file
+        print(f"\nError saving trivia data: {error}") # Print an error message if there is an issue writing to the file
         return False # Return False to indicate that saving the trivia questions failed
 
 def load_players():
@@ -69,7 +69,7 @@ def load_players():
         return players # Return the list of Player objects
 
     except (OSError, json.JSONDecodeError) as error: # Catch errors related to file not found, JSON decoding, or OS errors
-        print(f"Error reading players file: {error}")
+        print(f"\nError reading players file: {error}")
         return [] # Return an empty list if there is an error reading the file
 
 
@@ -88,7 +88,7 @@ def save_players(players):
             return True # Return True to indicate that saving the player data was successful
 
     except (OSError, TypeError) as error: # Catch OSError to handle file writing issues
-        print(f"Error saving player data: {error}") # Print an error message if there is an issue writing to the file
+        print(f"\nError saving player data: {error}") # Print an error message if there is an issue writing to the file
         return False # Return False to indicate that saving the player data failed
 
 def update_high_score(player, score):
@@ -104,7 +104,11 @@ def update_high_score(player, score):
 def reset_high_scores(players):
     for player in players: # Iterate over each Player object in the list
         player.reset_high_score() # Reset the player's high score to 0
-    save_players(players) # Save the updated list of players to storage
+    if save_players(players):
+        return True # Return True to indicate that resetting high scores was successful
+    else:
+        return False # Return False to indicate that resetting high scores failed
+    
 
 def load_quiz_history():
     try:
@@ -112,17 +116,17 @@ def load_quiz_history():
             data = json.load(file) # Load the JSON data from the file
             return data.get("history", []) # Return the quiz history, defaulting to an empty list if not present
     except FileNotFoundError: # Catch FileNotFoundError to handle the case where the file does not exist
-        print("Quiz history file not found. Returning empty history.") # Print a message indicating that the file was not found
+        print("\nQuiz history file not found. Returning empty history.") # Print a message indicating that the file was not found
         return [] # Return an empty list if the file is not found
     except (OSError, json.JSONDecodeError) as error: #  Catch OSError and JSONDecodeError to handle file reading issues
-        print(f"Error reading quiz history file: {error}")
+        print(f"\nError reading quiz history file: {error}")
         return None # Return None if there is an error reading the file
 
 def save_quiz_history(player, score, category, difficulty):
     history = load_quiz_history() # Load the existing quiz history from storage
 
     if history is None: # Check if the loaded history is None, indicating an error occurred and stop trying to save.
-        print("Error: Quiz history is None.")
+        print("\nError: Quiz history is None.")
         return
 
     next_id = len(history) + 1 # Generate a new quiz ID based on the number of existing history entries
@@ -145,5 +149,5 @@ def save_quiz_history(player, score, category, difficulty):
             return True # Return True to indicate that saving the quiz history was successful
 
     except (OSError) as error: # Catch OSError and TypeError to handle file writing issues
-        print(f"Error saving quiz history: {error}") # Print an error message if there is an issue writing to the file
+        print(f"\nError saving quiz history: {error}") # Print an error message if there is an issue writing to the file
         return False # Return False to indicate that saving the quiz history failed

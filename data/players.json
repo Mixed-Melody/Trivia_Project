@@ -3,12 +3,12 @@
         {
             "id": "P001",
             "name": "Rachel",
-            "high_score": 50
+            "high_score": 0
         },
         {
             "id": "P002",
             "name": "River",
-            "high_score": 8
+            "high_score": 2
         },
         {
             "id": "P003",
@@ -23,7 +23,7 @@
         {
             "id": "P005",
             "name": "Dani",
-            "high_score": 2
+            "high_score": 0
         }
     ]
 }

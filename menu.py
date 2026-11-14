@@ -29,7 +29,6 @@ if first_load: # print a message the first time the menu is loaded
     gf.typewriter_print("=== Welcome to Dani's Trivia Game!!! ===")
     first_load = False  # Set the flag to False after the first load
 
-
 show_menu()
 
 while True:    

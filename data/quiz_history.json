@@ -6,6 +6,20 @@
             "score": 2,
             "category": "All",
             "difficulty": "All"
+        },
+        {
+            "Quiz ID": "Q002",
+            "player_id": "P005",
+            "score": 2,
+            "category": "All",
+            "difficulty": "All"
+        },
+        {
+            "Quiz ID": "Q003",
+            "player_id": "P002",
+            "score": 2,
+            "category": "All",
+            "difficulty": "All"
         }
     ]
 }

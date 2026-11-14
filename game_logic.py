@@ -3,10 +3,6 @@ import global_functions as gf
 from storage import load_questions,load_players,save_players,save_quiz_history, load_quiz_history
 import quiz as q
 
-current_player = None  # Global variable to hold the current player
-global_category = None # get the category of the current question
-global_difficulty = None # get the difficulty of the current question
-
 def display_options(options, prompt):
     print()  # New line before displaying options
     for row in range(4):
@@ -32,8 +28,7 @@ def choose_options(options, prompt):
             else:
                 print(f"Invalid selection. Please choose a valid {prompt}.\n") # Print an error message for invalid selection
         except ValueError:
-            print("Invalid input. Please enter a number.\n") # Print an error message for non-integer input
-            
+            print("Invalid input. Please enter a number.\n") # Print an error message for non-integer input      
 
 def choose_number_of_questions(count):
     print(f"There are {count} questions available. How many would you like to answer? (1 - {count})\n") # Prompt the user for the number of questions to answer
@@ -87,73 +82,48 @@ def start_selection():
     if not categories: # Check if the list of categories is empty
         print("No categories available. Please add questions to the trivia game.")
         return
-    global global_category, global_difficulty # Declare category and difficulty as global variables to access their values
+    
     categories.insert(0, "All") # Add an "All" option to the list of categories
     selected_category = choose_options(categories, "category") # Prompt the user to select a category
-    global_category = selected_category # Store the selected category in a global variable
     difficulties = q.get_difficulties(questions, selected_category) # Get the available difficulties from the loaded questions
     difficulties.insert(0, "All") # Add an "All" option to the list of difficulties
     selected_difficulty = choose_options(difficulties, "difficulty") # Prompt the user to select a difficulty
-    global_difficulty = selected_difficulty # Store the selected difficulty in a global variable
     filtered_questions = q.filter_questions(questions, selected_category, selected_difficulty) # Filter the questions based on the selected category and difficulty
     choose_number = choose_number_of_questions(len(filtered_questions)) # Prompt the user to select the number of questions to answer
-    return filtered_questions, choose_number # Return the filtered questions and the number of questions to answer
-
-def update_high_score(player, score):
-    if score > player.high_score: # Check if the new score is higher than the player's current high score
-        player.high_score = score # Update the player's high score
-        players = load_players() # Load the existing players from storage
-        for i, p in enumerate(players): # Iterate through the list of players to find the current player
-            if p.player_id == player.player_id: # Check if the player IDs match
-                players[i] = player # Update the player's information in the list
-                break
-        save_players(players) # Save the updated list of players to storage
-
-def update_quiz_history(player, score, category, difficulty):
-    loaded_history = load_quiz_history() # Load the existing quiz history from storage
-    next_id = len(loaded_history) + 1 # Generate a new quiz ID based on the number of existing history entries
-
-    while True:
-        quiz_id = f"Q{next_id:03d}" # Generate a new quiz ID in the format "Q###"
-        if any(entry["Quiz ID"] == quiz_id for entry in loaded_history): # Check if the generated quiz ID already exists
-            next_id += 1 # Increment the ID if it already exists
-            quiz_id = f"Q{next_id:03d}" # Generate a new quiz ID in the format "Q###"
-        else:
-            break
-
-    save_quiz_history(quiz_id, player, score, category, difficulty) # Save the quiz history entry to storage
-
+    return filtered_questions, choose_number,selected_category, selected_difficulty # Return the filtered questions and the number of questions to answer
 
 def start_quiz():
     player = choose_player() # Prompt the user to select or create a player
     selection =start_selection() # Start the selection process for category, difficulty, and number of questions
     if selection is None: # Check if the selection process was unsuccessful
         return # Exit the function if no selection was made
-    filtered_questions, choose_number = selection
+    filtered_questions, choose_number,selected_category, selected_difficulty = selection
     
     print(f"You have selected {choose_number} questions from the filtered list of {len(filtered_questions)} questions.")
     questions = q.select_random_questions(filtered_questions, choose_number) # Select a random subset of questions based on the user's choice
     gf.typewriter_print("Starting the quiz...\n")
     quiz_round = QuizRound(player, questions)
-    
 
     while not quiz_round.is_finished(): # Continue the quiz until all questions have been answered
         quiz_round.show_question()
         answer = gf.get_valid_int("Enter your answer: ", 1, len(quiz_round.get_current_question().choices))-1 # Prompt the user for their answer and validate the input
         quiz_round.answer_question(answer)
         quiz_round.next_question()
-    else:
-        player.update_high_score(quiz_round.score) # Update the player's high score if applicable
+    
+    if player.update_high_score(quiz_round.score):
+        print("New high score achieved!") # Update the player's high score if applicable
         players = load_players() # Load the existing players from storage
         for i, p in enumerate(players): # Iterate through the list of players to find the current player
             if p.player_id == player.player_id: # Check if the player IDs match
                 players[i] = player # Update the player's information in the list
+                save_players(players) # Save the updated list of players to storage
                 break
+        else:
+            print("Player not found in the list. High score not saved.") # Print an error message if the player is not found in the list
 
-        global global_category, global_difficulty # Declare category and difficulty as global variables to access their values
+    save_quiz_history(player, quiz_round.score, selected_category, selected_difficulty) # Save the quiz history entry to storage
 
-        update_quiz_history(player, quiz_round.score, global_category, global_difficulty) # Update the quiz history with the current quiz details
-        save_players(players) # Save the updated list of players to storage
+    quiz_round.show_summary() # Show the summary of the quiz round
     
-        input("\nPress Enter to return to the main menu...")
-        return # return to the main menu after the quiz is finished
+    input("\nPress Enter to return to the main menu...")
+    return # return to the main menu after the quiz is finished

@@ -79,6 +79,8 @@ class Player:
     def update_high_score(self, score):
         if score > self.high_score:
             self.high_score = score
+            return True  # Return True to indicate that the high score was updated
+        return False  # Return False to indicate that the high score was not updated
 
     def change_name(self, new_name):
         self.name = new_name
@@ -173,8 +175,6 @@ class QuizRound:
             return False
 
     def is_finished(self):
-        if self.current_index >= len(self.questions): # shows the summary before returning true or false
-            self.show_summary()
-        return self.current_index >= len(self.questions) # returns true if the current index is greater than or equal to the number of questions, indicating that the quiz round is finished
+        return self.current_index >= len(self.questions) # returns true if the current index is greater than or equal to the number of questions
 
  

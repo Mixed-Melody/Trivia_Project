@@ -20,6 +20,13 @@
             "score": 2,
             "category": "All",
             "difficulty": "All"
+        },
+        {
+            "Quiz ID": "Q004",
+            "player_id": "P005",
+            "score": 2,
+            "category": "All",
+            "difficulty": "All"
         }
     ]
 }
